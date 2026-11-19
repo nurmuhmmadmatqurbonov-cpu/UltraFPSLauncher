@@ -16,7 +16,7 @@ jobs:
       - name: Install deps
         run: pip install psutil requests pyinstaller
       - name: Build EXE
-        run: pyinstaller --onefile --windowed --name UltraFPSLauncher ultrafps.py
+       run: pyinstaller --onefile --windowed --name UltraFPSLauncher .github/workflows/ultrafps.py
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
