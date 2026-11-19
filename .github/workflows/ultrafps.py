@@ -12,24 +12,6 @@ import zipfile
 import threading
 import subprocess
 from pathlib import Path
-
-
-def ensure_dependencies():
-    needed = {"psutil": "psutil", "requests": "requests", "PyInstaller": "pyinstaller"}
-    missing = []
-    for mod, pkg in needed.items():
-        try:
-            __import__(mod)
-        except ImportError:
-            missing.append(pkg)
-    if missing:
-        print(f"Установка зависимостей: {missing}")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", *missing])
-        os.execv(sys.executable, [sys.executable] + sys.argv)
-
-
-ensure_dependencies()
-
 import psutil
 import requests
 import tkinter as tk
